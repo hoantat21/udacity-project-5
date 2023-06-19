@@ -1,0 +1,21 @@
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+  - cd client
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t todoapp-frontend .
+  - docker tag todoapp-frontend hoantat21/todoapp-frontend:v1
+
+after_success:
+  - docker logout
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push hoantat21/todoapp-frontend:v1
