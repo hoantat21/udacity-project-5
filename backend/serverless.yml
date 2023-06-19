@@ -1,7 +1,7 @@
 # TODO: Change the name of the org 
 org: hoanta21 
-app: serverless-tatph
-service: serverless-todo-app
+app: serverless-project-5-tatph
+service: serverless-project5-todo-app
 frameworkVersion: '3'
 
 plugins:
@@ -28,9 +28,9 @@ provider:
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: tatph-serverless-c4-todo-images-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: tatph-serverless-p5-todo-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
-    AUTH_0_SECRET_ID: 9NvrEr8GHMoVFQ__kEiNGx2PkmmgLVkzcAPsh9W9kFDk96r_rfgAbS-bYtqDPYHk
+    AUTH_0_SECRET_ID: 7V8LiWwFY3Czs0a-mk3l_SAZa0i6o9PQS3fpKgRLFijyzUa4z7Lh9rGk9gWhpGt9
       
   logs:
     # Enable API Gateway logs
